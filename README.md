@@ -1,4 +1,4 @@
-# Label-Prediction-with-BERT-
+# Label-Prediction-with-BERT
 BERT - Label Prediction
 BERT (Bidirectional Encoder Representations from Transformers) is a pre-trained deep learning model developed by Google for natural language processing (NLP) tasks. 
 The model is based on the transformer architecture, which is a type of neural network that processes sequential data by selectively attending to different parts of
