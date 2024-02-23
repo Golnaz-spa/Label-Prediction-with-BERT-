@@ -30,6 +30,3 @@ This project demonstrates how to use a pre-trained BERT (Bidirectional Encoder R
 ## Results Interpretation
 
 The project concludes with an evaluation of the trained BERT model on a test dataset, reporting key classification metrics. By analyzing these metrics, one can assess the model's ability to accurately classify text into predefined categories, making adjustments to the training process as necessary for improved performance.
-
-
-flexibility of pre-trained transformers in handling complex natural language understanding challenges.
