@@ -1,45 +1,35 @@
-# BERT - Label Prediction
+# BERT Model for Text Classification
 
-## About
+This project demonstrates how to use a pre-trained BERT (Bidirectional Encoder Representations from Transformers) model for text classification. The BERT model, developed by Google, has revolutionized the way natural language processing tasks are approached. This example focuses on classifying Stack Overflow questions into different categories based on their content.
 
-Welcome to the BERT Label Prediction project. This project utilizes BERT (Bidirectional Encoder Representations from Transformers), a pre-trained deep learning model developed by Google for natural language processing (NLP) tasks. BERT is based on the transformer architecture, a powerful neural network design that excels in processing sequential data by selectively attending to different parts of the input sequence.
+## Project Setup
 
-## Project Purpose
+- **Library Installation**: The project requires the `transformers` library, which provides access to pre-trained BERT models and tokenizers.
+- **Data Preparation**: An Excel file containing labeled Stack Overflow questions is used as the dataset. Preprocessing includes dropping unnecessary columns and converting categorical labels into numeric format.
+- **Data Splitting**: The dataset is split into training, validation, and test sets to evaluate the model's performance accurately.
+- **Tokenization**: The BERT tokenizer converts text into tokens that can be processed by the model. This step involves specifying a maximum sequence length and padding shorter sequences.
+- **Model Architecture**: A custom neural network architecture is defined, incorporating the pre-trained BERT model as the base. The network includes additional layers for dropout, ReLU activation, and softmax classification.
+- **Training**: The model is trained on the pre-processed and tokenized training set using AdamW optimizer and a specified learning rate.
+- **Evaluation**: The trained model's performance is evaluated on the validation set, and the best-performing model weights are saved.
+- **Testing**: Finally, the model is tested on the unseen test set, and classification metrics are reported to assess its performance.
 
-In this project, we leverage BERT to predict top-level labels for code review comments and questions. The primary goal is to classify each question into one of five categories:
-- Suggestion
-- Requests
-- Attitudes and emotions
-- Hypothetical scenario
-- Rhetorical questions
+## Key Components
 
-To achieve this, we use the "Question" column in the dataset as the independent feature for the model. The target variable is the "top-level label," representing the category to which the question belongs.
-
-## BERT Overview
-
-BERT operates by encoding the input sequence (in this case, the code review comment question) into a vector representation. This encoding is accomplished by passing the input through multiple layers of the transformer architecture. After encoding the input sequence, the model performs a classification task to predict the most likely top-level label for the given question. This is achieved using a softmax function, which assigns probabilities to each category based on the encoded input representation.
-
-## Project Details
-
-- Pre-trained BERT model is used for fine-tuning.
-- Python and PyTorch are used for the project's implementation.
-- The code includes training, evaluation, and prediction functions.
-- Data preprocessing is performed to prepare the dataset for training.
-
-## Data
-
-The dataset used in this project contains code review comments and questions with corresponding top-level labels. The "Question" column serves as the primary input feature for the BERT model.
-
-## Model Training
-
-To train the model, the code review comment questions are tokenized, and the resulting tokens are used as input to the BERT model. The model is fine-tuned on the labeled data to optimize for the classification task.
+- **BERT Pre-trained Model**: Utilizes the 'bert-base-uncased' model suitable for text classification tasks.
+- **Custom Neural Network**: Enhances the BERT model with additional fully connected layers to tailor it for the classification task.
+- **Optimizer and Loss Function**: Employs the AdamW optimizer with class weights to handle imbalanced datasets and uses negative log-likelihood loss for classification.
+- **Performance Metrics**: Evaluates model performance using classification report metrics, including precision, recall, and F1-score.
 
 ## Usage
 
-To utilize this project for label prediction, follow these steps:
+1. **Environment Setup**: Install the `transformers` library using pip.
+2. **Data Loading**: Load your dataset and perform necessary preprocessing steps.
+3. **Model Training**: Customize the model's architecture, training epochs, and batch size as needed.
+4. **Evaluation and Testing**: Use the provided functions to evaluate the model on validation and test datasets.
 
-1. Clone the repository:
+## Results Interpretation
 
-```bash
-git clone https://github.com/your-username/bert-label-prediction.git
-cd bert-label-prediction
+The project concludes with an evaluation of the trained BERT model on a test dataset, reporting key classification metrics. By analyzing these metrics, one can assess the model's ability to accurately classify text into predefined categories, making adjustments to the training process as necessary for improved performance.
+
+
+flexibility of pre-trained transformers in handling complex natural language understanding challenges.
